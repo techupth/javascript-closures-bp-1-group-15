@@ -22,12 +22,12 @@ let productSales = [
 
 function calculateTotalSales(items) {
   let total = 0;
-  for (let item of items) {
-    total = total + item.sale;
-  }
+  for (let item in items) {
+    total = total + items[item].sales;
+  };
   return total;
-}
+};
 
-let total = calculateTotalSales();
+let total = calculateTotalSales(productSales);
 
-console.log("Total sales: ", total);
+console.log("Total sales: ", total); // Expected 'Total sales: 1995600.22'
